@@ -54,3 +54,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :development, :test do
+  gem 'rspec-rails', '~> 6.1.0'
+  gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'factory_bot'
+end
+
+gem 'rubocop'
