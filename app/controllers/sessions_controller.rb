@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     if @user&.authenticate?(params[:password])
       session[:user_id] = @user.id
-      redirect_to projects_path
+      redirect_to projects_path, notice: 'You have been succesfully login'
     else
       @error = true
       render :new
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to projects_path
+    redirect_to projects_path, notice: 'You have been succesfully logout from the system'
   end
 
   private
