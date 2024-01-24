@@ -64,3 +64,5 @@ group :development, :test do
 end
 
 gem 'rubocop'
+
+gem 'will_paginate-bootstrap4'
