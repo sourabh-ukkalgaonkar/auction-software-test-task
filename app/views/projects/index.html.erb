@@ -1,0 +1,20 @@
+<div class="container"> 
+  <% if @projects.present? %>
+    <div class='col-md-12'>
+      <div class='form-group col-md-3'>
+        <%= select_tag 'sort_by', options_for_select(sort_options, params[:sort_by] || sort_options.first), class: 'form-control col-md-3', id: 'sort_by' %>
+      </div>
+    </div>
+
+    <p id="notice"><%= notice %></p>
+
+    <h1>Projects List</h1>
+
+    <div id="project-list">
+        <%= render 'projects', projects: @projects %>  
+    </div>
+    <br>
+  <% else %>
+    Please Sign In to view the projects
+  <% end %>  
+</div>

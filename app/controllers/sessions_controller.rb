@@ -9,10 +9,9 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(username: params[:username])
 
-    # debugger
     if @user&.authenticate?(params[:password])
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to projects_path
     else
       @error = true
       render :new
@@ -21,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    redirect_to projects_path
   end
 
   private

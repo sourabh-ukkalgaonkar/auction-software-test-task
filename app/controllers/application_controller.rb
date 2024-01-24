@@ -2,6 +2,8 @@
 
 # Class ApplicationController Parent class for all the controllers
 class ApplicationController < ActionController::Base
+  PER_PAGE = 2
+  
   helper_method :current_user, :logged_in?
 
   def current_user

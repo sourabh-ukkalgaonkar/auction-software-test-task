@@ -1,0 +1,27 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Username</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% projects.each do |project| %>
+      <tr>
+        <td><%= project.title %></td>
+        <td><%= project&.user&.username %></td>
+        <td><%= project&.category&.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate(projects) %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.pagination > li > a').attr('data-remote', 'true');
+  });
+</script>

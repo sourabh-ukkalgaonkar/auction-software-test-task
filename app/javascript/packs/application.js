@@ -17,3 +17,4 @@ global.$ = jQuery;
 
 import 'stylesheets/application';
 import 'bootstrap';
+import "./projects.js"
