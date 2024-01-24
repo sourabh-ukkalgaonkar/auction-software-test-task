@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates :email, :username, uniqueness: true
   validates :email, format: URI::MailTo::EMAIL_REGEXP
 
+  has_many :projects
+
   attr_accessor :password
 
   before_save :set_secure_password

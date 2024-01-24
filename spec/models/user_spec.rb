@@ -16,6 +16,10 @@ RSpec.describe User, type: :model do
     it { should_not allow_value(Faker::Name.name).for(:email) }
   end
 
+  context 'Associations' do 
+    it { should have_many(:projects) }
+  end
+
   context 'Instance Methods' do
     describe 'authenticate?' do
       it 'should authenticate user' do
