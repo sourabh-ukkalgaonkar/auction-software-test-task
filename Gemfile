@@ -59,7 +59,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.1.0'
   gem 'shoulda-matchers'
   gem 'faker'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 gem 'rubocop'
